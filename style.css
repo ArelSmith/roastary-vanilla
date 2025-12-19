@@ -121,14 +121,6 @@ nav .navbar-container .navbar-toggle.active .bar:nth-child(3) {
   nav .navbar-container {
     width: 800px;
   }
-}
-
-/* Desktop */
-@media only screen and (min-width: 992px) {
-  nav .navbar-container {
-    width: 1200px;
-  }
-
   nav .navbar-container .navbar-menu {
     position: static;
     justify-content: end;
@@ -142,14 +134,33 @@ nav .navbar-container .navbar-toggle.active .bar:nth-child(3) {
     width: 0;
     height: 0;
   }
+
   nav .navbar-container .navbar-menu li a {
     color: white;
     text-decoration: none;
-    font-weight: 200;
     font-size: 20px;
+  }
+
+  nav .navbar-container .navbar-menu li a:hover::after {
+    content: " ";
+    border-bottom: 3px solid white;
+    display: block;
+    width: 50%;
+    margin: auto;
+    padding-bottom: 5px;
+    margin-bottom: -8px;
+    /* border-radius: 4px; */
+    transition: all 1s ease-in;
   }
 
   nav .navbar-container .navbar-toggle {
     display: none;
+  }
+}
+
+/* Desktop */
+@media only screen and (min-width: 992px) {
+  nav .navbar-container {
+    width: 1200px;
   }
 }
