@@ -3,6 +3,10 @@
   --secondary: #57595b;
   --tertiary: #e8d1c5;
   --background: #f3e8df;
+
+  --text-primary: #2b1a1a;
+  --text-secondary: #5a4a46;
+  --text-muted: #7a6a66;
 }
 
 * {
@@ -14,8 +18,16 @@
 body {
   background-color: var(--background);
   font-family: "Poppins", sans-serif;
+  height: 2000px;
 }
 
+h1,
+h2,
+h3 {
+  color: var(--primary);
+}
+
+/* Navbar Section */
 nav {
   display: flex;
   justify-content: center;
@@ -61,6 +73,7 @@ nav .navbar-container .navbar-menu {
   visibility: hidden;
   transform: translateY(-800px);
   transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease;
+  z-index: 998;
 }
 
 nav .navbar-container .navbar-menu.active {
@@ -107,12 +120,59 @@ nav .navbar-container .navbar-toggle.active .bar:nth-child(3) {
   transform: translateY(-12px) rotate(-45deg);
 }
 
+/* Jumbotron Section */
+#jumbotron {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#jumbotron .jumbotron-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 20rem;
+  margin: auto;
+}
+
+#jumbotron .jumbotron-heading {
+  font-family: "EB Garamond", serif;
+  text-align: center;
+  padding-top: 3rem;
+  font-size: 3.5rem;
+}
+
+#jumbotron .jumbotron-subheading {
+  font-family: "EB Garamond", serif;
+  color: var(--text-secondary);
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+#jumbotron .jumbotron-image img {
+  display: block;
+  margin: auto;
+  animation: rotateImage 5s linear;
+  animation-timeline: scroll();
+}
+
+/* Keyframes */
 @keyframes transparentItem {
   from {
     transform: translateY(-800px);
   }
   to {
     transform: translateY(0px);
+  }
+}
+
+@keyframes rotateImage {
+  from {
+    transform: translateX(0) rotateZ(0deg);
+  }
+
+  to {
+    transform: translateX(500px) rotateZ(360deg);
   }
 }
 
